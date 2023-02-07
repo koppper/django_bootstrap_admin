@@ -1,0 +1,27 @@
+<div class="navbar navbar-fixed-top mt-2">
+    <div class="row">
+        <div class="col-6 offset-md-2">
+            <img class="img col-3" src="https://www.almau.edu.kz/images/uploads/1d122219a21ec914f0c77a0fb9b8946f.png">
+        </div>
+        <div class="col row nav-justified">
+            <div class="col-6">
+                <img class="img col-1" src="https://cdn-icons-png.flaticon.com/512/1250/1250689.png">
+                {% if user.is_authenticated %}<a href="/logout.html">Logout</a>
+                    {% else %}
+                    <a href="/login.html">Login</a>
+                    <a class="col-md-2" href="/register">Register</a>
+                {% endif %}
+            </div>
+            <div class="col-2">Language</div>
+        </div>
+    </div>
+</div>
+<hr align="center" width="100%" size="2" />
+<div class="container">
+    <nav class="nav nav-pills nav-fill">
+      <a class="nav-link disabled" aria-current="page" href="#">Главная</a>
+      <a class="nav-link disabled" href="#">Вестник</a>
+      <a class="nav-link disabled" href="#">Авторам</a>
+      <a class="nav-link disabled">Редколлегия</a><a class="nav-link disabled">Контакты</a>
+    </nav>
+</div>

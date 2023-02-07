@@ -1,13 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'base.html' %}
 
-<head>
-
-  {% include "head_part.html" %}
-
-</head>
-
-<body class="bg-gradient-primary">
+{% block content %}
+<body class="bg-gradient-light">
 
     <div class="container">
 
@@ -30,9 +24,9 @@
                                         {% csrf_token %}
                                         <div class="form-group">
                                             <input class="form-control form-control-user"
-                                                   name="username"
+                                                   name="email"
                                                 id="exampleInputUsername" aria-describedby="usernameHelp"
-                                                placeholder="Enter username...">
+                                                placeholder="Enter email...">
                                         </div>
                                         <div class="form-group">
                                             <input type="password" class="form-control form-control-user"
@@ -95,4 +89,4 @@
 
 </body>
 
-</html>
+{% endblock %}
