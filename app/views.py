@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.shortcuts import render, redirect
 from app.models import User
 from django.contrib.auth import authenticate, login, logout
@@ -51,10 +52,17 @@ def html(request, filename):
 
 def register(request):
     if request.method == "POST":
-        user = User()
-        user.first_name = request.POST.get("first_name")
-        user.last_name = request.POST.get("last_name")
-        user.email = request.POST.get("email")
-        user.password = request.POST.get("password")
-        user.save()
+        if request.POST['password'] == request.POST['password2']:
+            try:
+                User.objects.get(email=request.POST['email'])
+                return HttpResponse("Такой пользователь уже есть прикинь")
+            except User.DoesNotExist:
+                user = User.objects.create_user(
+                    email=request.POST['email'],
+                    last_name=request.POST["last_name"],
+                    first_name=request.POST['first_name'],
+                    password=request.POST['password'])
+                login(request, user)
+                print('New user: ', user)
+                return redirect('/')
     return render(request, "register.html", {"user": User})
