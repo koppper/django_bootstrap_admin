@@ -1,5 +1,5 @@
 from django.contrib.auth.tokens import default_token_generator
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.shortcuts import render, redirect
 from django.utils.encoding import force_bytes
 from django.utils.http import urlsafe_base64_encode
@@ -7,6 +7,7 @@ from django.utils.http import urlsafe_base64_encode
 from app.models import User
 from django.contrib.auth import authenticate, login, logout
 from django.db.models import ObjectDoesNotExist
+from .models import Speakers
 
 
 def index(request):
@@ -71,6 +72,7 @@ def register(request):
                 return redirect('/')
     return render(request, 'register.html')
 
+
 # def reset_password(request):
 #     if request.method == 'POST':
 #         try:
@@ -90,6 +92,8 @@ def register(request):
 #             return redirect('/')
 
 
-
 def htt(request):
-    return render(request, "httt.html")
+    speakers = Speakers.objects.all()
+
+    return render(request, "httt.html", {"speakers": speakers})
+

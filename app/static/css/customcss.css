@@ -13,7 +13,7 @@ a:hover, a:focus { text-decoration: none;}
 
 
 .ddd{
-    background-image: url('http://www.almau.edu.kz/images/uploads/1215f253a07e1f7b318da2fb9a0a4b66.jpeg');
+    /*background-image: url('http://www.almau.edu.kz/images/uploads/1215f253a07e1f7b318da2fb9a0a4b66.jpeg');*/
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
@@ -139,5 +139,32 @@ figure.effect-text-three:hover p {
 	height: 15%;
 	text-align: end;
 	position: absolute;
-
 }
+
+body, html{
+  max-width: 100%;
+}
+
+.myrow{
+	width: 60%;
+	margin-left: 20%;
+	margin-right: 15%;
+	margin-top: 70px;
+}
+
+
+.myborder{
+	border-bottom-color: #544c4c;
+	border: 1px solid #d0d0d0;
+	margin-top: 50px;
+}
+
+.myborder:hover{
+    border: 1px solid #d0d0d0;
+	border-bottom-color: #165fe5;
+	border-bottom-width: 5px;
+}
+html {
+  font-size: 1.1rem;
+}
+

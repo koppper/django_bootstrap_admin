@@ -1,0 +1,19 @@
+<div class="myrow">
+    <h4 class="fst-italic text-primary" style="font-size: 40px">Keynote Speakers</h4>
+    <hr width="90px" align="left" style=" border: 1px solid blue;" />
+    <div class="row justify-content-md-center mt-4">
+        {% for speaker in speakers %}
+        <div class="col-md-6 text-center mt-4">
+            <img src="https://socinfo2018.hse.ru/public/people/Ingmar_Weber.jpg" alt="" width="110px" class="rounded-circle">
+                <div class="myborder">
+                <div class="text-dark text-center mr-4 p-4 m-3">
+                    <h4 class=" text-primary">{{ speaker.name }}</h4>
+                    <p class="font-weight-bold">{{ speaker.employee }}</p>
+
+                    {{ speaker.description }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
