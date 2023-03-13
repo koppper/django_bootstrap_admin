@@ -10,12 +10,6 @@ from django.db.models import ObjectDoesNotExist
 from .models import Speakers
 
 
-def index(request):
-    # if request.user.is_anonymous:
-    #     return redirect("/")
-    return render(request, 'index.html')
-
-
 def html(request, filename):
     context = {"filename": filename,
                "collapse": ""}
@@ -95,5 +89,17 @@ def register(request):
 def htt(request):
     speakers = Speakers.objects.all()
 
-    return render(request, "httt.html", {"speakers": speakers})
+    return render(request, "bg_img.html", {"speakers": speakers})
+
+
+def publications(request):
+    return render(request, "publications.html")
+
+
+def organizers(request):
+    return render(request, "organizers.html")
+
+
+def registration_visa(request):
+    return render(request, "registration_visa.html")
 

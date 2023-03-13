@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+
+    <div class="myrow">
+    <h3 class="text-dark" style="font-size: 40px">Publications</h3>
+    <hr width="90px" align="left" style=" border: 1px solid blue;" />
+
+    <div class="row justify-content-md-between mt-5">
+        <div class="col-md-12 text-dark">
+            <h4 class="fst-italic mb-3 text-primary">30th CEEMAN Annual Conference Proceedings</h4>
+            30-я Ежегодная конференция CEEMAN состоялась 21-23 сентября 2022 года в Бледе, Словения, в штаб-квартире CEEMAN и Школы менеджмента IEDC-Bled.
+            Мероприятие под названием «Будущее управленческого образования:
+            понимание общей картины» могло похвастаться множеством увлекательных панелей, дискуссий и,
+            среди прочего, уникальным представлением ИИ, в котором искусство встречается с видением будущего членов CEEMAN.
+        </div>
+    </div>
+    <div class="row justify-content-md-between mt-5">
+        <div class="col-md-12 text-dark">
+            <h4 class="fst-italic mb-3 text-primary">29th CEEMAN Annual Conference Proceedings</h4>
+            29-я ежегодная конференция CEEMAN состоялась 22-24 сентября 2021 года в прекрасном Триесте, Италия, а также онлайн.
+            На нем обсуждалась тема «Менеджмент-образование на перекрестке», и в нем приняли участие более 150 участников из 30 стран мира.
+        </div>
+    </div>
+</div>
+
+
+{#myrow#}
+<div class="myrow">
+    <h4 class="fst-italic text-primary">Social Informatics Steering Committee</h4>
+
+    <div class="row justify-content-md-between mt-4">
+        <div class="col-md-5 text-dark">
+            <b>Adam Wierzbicki</b>, PJIIT, Poland<br>
+            <b>Karl Aberer</b>, EPFL, Switzerland<br>
+            <b>Katsumi Tanaka</b>, Kyoto University, Japan<br>
+            <b>Anwitaman Datta</b>, Nanyang Technological University, Singapore<br>
+            <b>Ee-Peng Lim</b>, Singapore Management University, Singapore<br>
+            <b>Noshir Contractor</b>, Northwestern University, US<br>
+        </div>
+        <div class="col-md-4 text-dark">
+            <b>Michael Macy</b>, Cornell University, US<br>
+            <b>Hsinchun Chen</b>, University of Arizona, US<br>
+            <b>Sue B. Moon</b>, KAIST, Korea<br>
+            <b>Andreas Ernst</b>, University of Kassel, Germany<br>
+            <b>Andreas Flache</b>, University of Groningen, Netherlands<br>
+            <b>Dirk Helbing</b>, ETH, Switzerland<br>
+        </div>
+    </div>
+</div>
+<div class="myrow">
+    <h4 class="fst-italic text-primary" style="font-size: 40px">Keynote Speakers</h4>
+    <hr width="90px" align="left" style=" border: 1px solid blue;" />
+    <div class="row justify-content-md-center mt-4">
+        {% for speaker in speakers %}
+        <div class="col-md-6 text-center mt-4">
+            <img src="https://socinfo2018.hse.ru/public/people/Ingmar_Weber.jpg" alt="" width="110px" class="rounded-circle">
+                <div class="myborder">
+                <div class="text-dark text-center mr-4 p-4 m-3">
+                    <h4 class=" text-primary">{{ speaker.name }}</h4>
+                    <p class="font-weight-bold">{{ speaker.employee }}</p>
+                    {{ speaker.description }}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

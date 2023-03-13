@@ -1,9 +1,11 @@
 from django.urls import path
-from app.views import index, html, register, htt
+from app.views import html, register, htt, publications, organizers, registration_visa
 urlpatterns = [
-    path('', index),
     # path('login/', html),
     path('<filename>.html', html),
     path("register/", register, name="register"),
-    path("ht/", htt)
+    path("", htt, name="home"),
+    path("publications/", publications, name="publications"),
+    path("organizers/", organizers, name="organizers"),
+    path("registr-visa/", registration_visa, name="registration_visa")
 ]
