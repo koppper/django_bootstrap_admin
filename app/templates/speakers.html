@@ -2,9 +2,15 @@
     <h4 class="fst-italic text-primary" style="font-size: 40px">Keynote Speakers</h4>
     <hr width="90px" align="left" style=" border: 1px solid blue;" />
     <div class="row justify-content-md-center mt-4">
+
         {% for speaker in speakers %}
+
         <div class="col-md-6 text-center mt-4">
-            <img src="https://socinfo2018.hse.ru/public/people/Ingmar_Weber.jpg" alt="" width="110px" class="rounded-circle">
+        {% if speaker.photo %}
+            <img src="{{ speaker.photo.url }}" alt="" width="110px" class="rounded-circle">
+            {% else%}
+                        <img src="https://images.philips.com/is/image/PhilipsConsumer/TAX5206_73-IMS-en_ZA?$jpglarge$&wid=1250" alt="" width="110px" class="rounded-circle">
+{% endif %}
                 <div class="myborder">
                 <div class="text-dark text-center mr-4 p-4 m-3">
                     <h4 class=" text-primary">{{ speaker.name }}</h4>

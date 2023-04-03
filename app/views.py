@@ -52,7 +52,7 @@ def register(request):
     if request.method == "POST":
         try:
             User.objects.get(email=request.POST['email'])
-            return HttpResponse("Такой пользователь уже есть прикинь")
+            return HttpResponse("Такой email уже есть.")
         except User.DoesNotExist:
             if request.POST['password'] == request.POST['password2']:
                 user = User.objects.create_user(
@@ -97,7 +97,8 @@ def publications(request):
 
 
 def organizers(request):
-    return render(request, "organizers.html")
+    speakers = Speakers.objects.all()
+    return render(request, "organizers.html", {"speakers": speakers})
 
 
 def registration_visa(request):

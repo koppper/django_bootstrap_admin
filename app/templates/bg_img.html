@@ -1,27 +1,24 @@
 {% extends "base.html" %}
 {% block content %}
-{% load static %}
+    {% load static %}
 
-<div class="hover-text-one mt-4">
-    <figure class="effect-text-three">
-    <img class="ddd" src="{% static 'img/almau_bg.jpeg' %}" alt=""/>
-        <figcaption>
-            <h3>Almaty management university</h3>
-            <p></p>
-           <div class="row position-absolute mr-5 pr-3">
-               <div class="col-4"></div>
-               <div class="col-4"><img class="almaulogo" src="{% static 'img/almau_logo.png' %}"></div>\
-               <div class="col-4"></div>
-
-           </div>
-            <p>20-22 сентября 2023 года в г. Алматы пройдет 31st CEEMAN Annual Conference.</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
-
-        </figcaption>
-    </figure>
-</div>
-{% include "content.html" %}
+    <div class="hover-text-one mt-4">
+        <figure class="effect-text-three">
+            <img class="ddd" src="{% static 'img/almau_bg.jpeg' %}" alt=""/>
+            <figcaption>
+                <h3>Almaty management university</h3>
+                <p></p>
+                <div class="row position-absolute mr-5 pr-3">
+                    <div class="col-4"></div>
+                    <div class="col-4"><img class="almaulogo" src="{% static 'img/almau_logo.png' %}"></div>
+                    <div class="col-4"></div>
+                </div>
+                <div class="mt-5">
+                    <p>31st CEEMAN Annual Conference Almaty Management University</p>
+                    <p>20-22 сентября 2023 года в г. Алматы пройдет 31st CEEMAN Annual Conference.</p>
+                </div>
+            </figcaption>
+        </figure>
+    </div>
+    {% include "content.html" %}
 {% endblock %}
